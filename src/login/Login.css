@@ -1,0 +1,27 @@
+
+.inputs:hover {
+    color: #6CB6C2;
+}
+#Login .container-login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+#Login .container-login .container-bg-login {
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+    padding-bottom: 10%;
+    margin-top: 10px;
+    float: right;
+    /* background-image: url('../../statics/bg-login.png'); */
+    background-size: cover;
+    background-position: center left;
+}
+.toolbar{
+    position: relative;
+    padding: 0 12px;
+    min-height: 50px;
+    width: 100%;
+}
