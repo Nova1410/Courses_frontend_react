@@ -1,0 +1,10 @@
+.toolbar{
+    position: relative;
+    padding: 0 12px;
+    min-height: 50px;
+    width: 100%;
+}
+.menu-icon{
+    color: white;
+    cursor: pointer;
+}
