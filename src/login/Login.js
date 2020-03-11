@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from '../boot/axios';
 import './Login.css';
-import {useHistory} from "react-router-dom";
 
 class Login extends React.Component {
     constructor(props){
@@ -43,6 +42,14 @@ class Login extends React.Component {
       }).catch(error => {
         console.log(error)
       })
+    }
+
+
+    componentDidMount(){
+      // If the user is already loged, send the user to the courses page
+      if (localStorage.getItem('token') !== null){
+        this.props.history.push('/courses')
+      }
     }
 
     render() {
