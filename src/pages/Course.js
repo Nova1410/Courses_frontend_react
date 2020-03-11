@@ -5,6 +5,8 @@ import Rating from 'react-rating';
 import axios from '../boot/axios';
 import debounce from 'lodash/debounce';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Menu from '../helpers/Menu'
+
 
 class Course extends React.Component {
   constructor(props){
@@ -48,10 +50,7 @@ class Course extends React.Component {
           // If there's data, add the courses to the courses array
           this.setState({
             courses: [...this.state.courses, ...response.data.courses],
-            loading: false
-          })
-          // Get the next url
-          this.setState({
+            loading: false,
             next: response.data.next
           })
         }
@@ -148,6 +147,7 @@ class Course extends React.Component {
 
   render() {
     return <div className="Course">
+      <Menu></Menu>
       <div className="container">
         <div className="row p-3">
           <div className="col-6">
@@ -163,6 +163,7 @@ class Course extends React.Component {
           <InfiniteScroll
             dataLength={this.state.courses.length}
             next={this.getCourses.bind(this)}
+            scrollThreshold="200px"
             hasMore={this.state.hasMore}
             className="row justify-content-center mt-5"
             loader={<h4>Loading ...</h4>}
